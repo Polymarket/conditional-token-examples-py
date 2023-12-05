@@ -24,8 +24,8 @@ def main():
     print(f"Starting...")
     print(f"Wallet: {w3.eth.default_account}")
 
-    usdc_address = "0x2791bca1f2de4661ed88a30c99a7a9449aa84174"
-    ctf_address = "0x4d97dcd97ec945f40cf65f87097ace5ea0476045"
+    usdc_address = w3.to_checksum_address("0x2791bca1f2de4661ed88a30c99a7a9449aa84174")
+    ctf_address = w3.to_checksum_address("0x4d97dcd97ec945f40cf65f87097ace5ea0476045")
     
     usdc = w3.eth.contract(usdc_address, abi=erc20_approve_abi)
     print(f"Approving USDC {usdc_address} on spender {ctf_address}...")
